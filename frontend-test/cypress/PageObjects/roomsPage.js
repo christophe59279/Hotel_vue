@@ -20,10 +20,15 @@ function backToOverview(cy){
     cy.get(backBtn).click()
 }
 
+function createRoom(cy){
+    cy.get(createRoomBtn).click()
+}
+
 
 module.exports={
     assertRightPage,
     backToOverview,
+    createRoom,
     pageURL
 
 }
