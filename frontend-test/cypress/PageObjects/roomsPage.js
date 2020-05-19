@@ -6,7 +6,10 @@ const h2='h2'
 
 const backBtn=':nth-child(3) .btn'
 const textH2='Rooms'
-const createRoomBtn='.blue' 
+const createRoomBtn='.blue'
+
+const threeDotsMenu=':nth-child(3) > .action'
+const deletBtn='.menu :nth-child(2)'
 
 const logoutBtn='.user .btn'
 
@@ -24,11 +27,17 @@ function createRoom(cy){
     cy.get(createRoomBtn).click()
 }
 
+function deleteRoom(cy){
+    cy.get(threeDotsMenu).click()
+    cy.get(deletBtn).click()
+}
+
 
 module.exports={
     assertRightPage,
     backToOverview,
     createRoom,
+    deleteRoom,
     pageURL
 
 }

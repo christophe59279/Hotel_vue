@@ -57,7 +57,13 @@ it('valid login och logout',function(){
     createRoom.selectFeature(cy)
     createRoom.SaveRoom(cy)
     cy.get('.container:nth-child(2)').should('contain','Floor 2').and('contain','Room 211')
-
  })
 
+ it('delete a room', function(){
+   startPage.validLogin(cy)
+   overviewPage.viewRoomsClick(cy)
+   cy.get('.card').should('have.length',3)
+   roomPage.deleteRoom(cy)
+   cy.get('.card').should('have.length',2)
+})
 })
