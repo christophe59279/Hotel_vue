@@ -2,11 +2,12 @@
 
 import * as startPage from "../../PageObjects/startPage"
 import * as overviewPage from "../../PageObjects/overviewPage"
-import * as roomPage from "../../PageObjects/roomsPage"
+import * as roomsPage from "../../PageObjects/roomsPage"
 import * as clientPage from "../../PageObjects/clientsPage"
 import * as billPage from "../../PageObjects/billsPage"
 import * as reservationPage from "../../PageObjects/reservationsPage"
 import * as createRoom from "../../PageObjects/createRoomPage"
+import * as editRoom from "../../PageObjects/editRoomPage"
 
 beforeEach(function(){
     cy.visit(startPage.pageURL)
@@ -25,8 +26,8 @@ it('valid login och logout',function(){
  it('view each object, assert and back', function(){
     startPage.validLogin(cy)
     overviewPage.viewRoomsClick(cy)
-    roomPage.assertRightPage(cy)
-    roomPage.backToOverview(cy)
+    roomsPage.assertRightPage(cy)
+    roomsPage.backToOverview(cy)
     
     overviewPage.viewClientsClick(cy)
     clientPage.assertRightPage(cy)
@@ -46,7 +47,7 @@ it('valid login och logout',function(){
  it('create a room', function(){
     startPage.validLogin(cy)
     overviewPage.viewRoomsClick(cy)
-    roomPage.createRoom(cy)
+    roomsPage.createRoom(cy)
     
     createRoom.assertRightPage(cy)
     createRoom.selectCategory(cy)
@@ -59,11 +60,24 @@ it('valid login och logout',function(){
     cy.get('.container:nth-child(2)').should('contain','Floor 2').and('contain','Room 211')
  })
 
+ it('edit a room', function(){
+   startPage.validLogin(cy)
+   overviewPage.viewRoomsClick(cy)
+   cy.get(':nth-child(3) > :nth-child(2) > .price').should('contain','2500')
+   roomsPage.editRoom(cy)
+   editRoom.assertRightPage(cy)
+   editRoom.editPrice(cy)
+   editRoom.saveRoom(cy)
+   cy.get(':nth-child(3) > :nth-child(2) > .price').should('contain','3000')
+     
+ })
+
  it('delete a room', function(){
    startPage.validLogin(cy)
    overviewPage.viewRoomsClick(cy)
    cy.get('.card').should('have.length',3)
-   roomPage.deleteRoom(cy)
+   roomsPage.deleteRoom(cy)
    cy.get('.card').should('have.length',2)
+   roomsPage.validlogout(cy)
 })
 })
