@@ -42,6 +42,9 @@ function validlogout(cy){
     cy.get(logoutBtn).click()
 }
 
+function assertLenghtOfRooms(length){
+    cy.get('.card').should('have.length',length)
+}
 
 module.exports={
     assertRightPage,
@@ -50,6 +53,7 @@ module.exports={
     editRoom,
     deleteRoom,
     validlogout,
+    assertLenghtOfRooms,
     pageURL
 
 }

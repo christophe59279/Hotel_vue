@@ -41,6 +41,10 @@ function viewReservationClick(cy){
     cy.get(viewReservationsBtn).click()
 }
 
+function assertRightPrice(price){
+    cy.get(':nth-child(3) > :nth-child(2) > .price').should('contain',price)
+}
+
 module.exports={
     validLogout,
     assertRightPage,
@@ -48,6 +52,7 @@ module.exports={
     viewClientsClick,
     viewBillsClick,
     viewReservationClick,
+    assertRightPrice,
     pageURL
 
 }

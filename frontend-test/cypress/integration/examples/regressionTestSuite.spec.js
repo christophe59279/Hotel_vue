@@ -63,21 +63,21 @@ it('valid login och logout',function(){
  it('edit a room', function(){
    startPage.validLogin(cy)
    overviewPage.viewRoomsClick(cy)
-   cy.get(':nth-child(3) > :nth-child(2) > .price').should('contain','2500')
+   overviewPage.assertRightPrice(2500)
    roomsPage.editRoom(cy)
    editRoom.assertRightPage(cy)
    editRoom.editPrice(cy)
    editRoom.saveRoom(cy)
-   cy.get(':nth-child(3) > :nth-child(2) > .price').should('contain','3000')
+   overviewPage.assertRightPrice(3000)
      
  })
 
  it('delete a room', function(){
    startPage.validLogin(cy)
    overviewPage.viewRoomsClick(cy)
-   cy.get('.card').should('have.length',3)
+   roomsPage.assertLenghtOfRooms(3)
    roomsPage.deleteRoom(cy)
-   cy.get('.card').should('have.length',2)
+   roomsPage.assertLenghtOfRooms(2)
    roomsPage.validlogout(cy)
 })
 })
