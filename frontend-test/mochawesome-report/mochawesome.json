@@ -1,0 +1,176 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-05-23T17:03:35.119Z",
+    "end": "2020-05-23T17:04:16.720Z",
+    "duration": 41601,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "633768b0-e66c-43a3-82ac-16be85801986",
+      "title": "",
+      "fullFile": "cypress/integration/examples/regressionTestSuite.spec.js",
+      "file": "cypress/integration/examples/regressionTestSuite.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "560f54aa-dd01-4938-a16a-16509401cb63",
+          "title": "Regression",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "valid login och logout",
+              "fullTitle": "Regression valid login och logout",
+              "timedOut": null,
+              "duration": 5329,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "startPage.assertRightPage(cy);\nstartPage.validLogin(cy);\noverviewPage.assertRightPage(cy);\noverviewPage.validLogout(cy);\nstartPage.assertRightPage(cy);",
+              "err": {},
+              "uuid": "e42e5fef-dd0e-4015-a7f3-8c13aea01989",
+              "parentUUID": "560f54aa-dd01-4938-a16a-16509401cb63",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "view each object, assert and back",
+              "fullTitle": "Regression view each object, assert and back",
+              "timedOut": null,
+              "duration": 9893,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "startPage.validLogin(cy);\noverviewPage.viewRoomsClick(cy);\nroomsPage.assertRightPage(cy);\nroomsPage.backToOverview(cy);\noverviewPage.viewClientsClick(cy);\nclientPage.assertRightPage(cy);\nclientPage.backToOverview(cy);\noverviewPage.viewBillsClick(cy);\nbillPage.assertRightPage(cy);\nbillPage.backToOverview(cy);\noverviewPage.viewReservationClick(cy);\nreservationPage.assertRightPage(cy);\nreservationPage.backToOverview(cy);\noverviewPage.validLogout(cy);",
+              "err": {},
+              "uuid": "aa044955-0ba5-47aa-ac3e-6107acda50f0",
+              "parentUUID": "560f54aa-dd01-4938-a16a-16509401cb63",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "create a room",
+              "fullTitle": "Regression create a room",
+              "timedOut": null,
+              "duration": 8560,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "startPage.validLogin(cy);\noverviewPage.viewRoomsClick(cy);\nroomsPage.createRoom(cy);\ncreateRoom.assertRightPage(cy);\ncreateRoom.selectCategory(cy);\ncreateRoom.selectNumber(cy);\ncreateRoom.selectFloor(cy);\ncreateRoom.selectavailable(cy);\ncreateRoom.selectPrice(cy);\ncreateRoom.selectFeature(cy);\ncreateRoom.SaveRoom(cy);\ncy.get('.container:nth-child(2)').should('contain', 'Floor 2').and('contain', 'Room 211');",
+              "err": {},
+              "uuid": "d64701cf-b362-4501-aefb-07d2f16de7b9",
+              "parentUUID": "560f54aa-dd01-4938-a16a-16509401cb63",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "edit a room",
+              "fullTitle": "Regression edit a room",
+              "timedOut": null,
+              "duration": 7207,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "startPage.validLogin(cy);\noverviewPage.viewRoomsClick(cy);\noverviewPage.assertRightPrice(2500);\nroomsPage.editRoom(cy);\neditRoom.assertRightPage(cy);\neditRoom.editPrice(cy);\neditRoom.saveRoom(cy);\noverviewPage.assertRightPrice(3000);",
+              "err": {},
+              "uuid": "0d125a44-82d8-4e6b-b3b2-8d0ba69203c4",
+              "parentUUID": "560f54aa-dd01-4938-a16a-16509401cb63",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "delete a room",
+              "fullTitle": "Regression delete a room",
+              "timedOut": null,
+              "duration": 4134,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "startPage.validLogin(cy);\noverviewPage.viewRoomsClick(cy);\nroomsPage.assertLenghtOfRooms(3);\nroomsPage.deleteRoom(cy);\nroomsPage.assertLenghtOfRooms(2);\nroomsPage.validlogout(cy);",
+              "err": {},
+              "uuid": "0720e531-42e8-4e91-a8fb-ee6108fe84e3",
+              "parentUUID": "560f54aa-dd01-4938-a16a-16509401cb63",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e42e5fef-dd0e-4015-a7f3-8c13aea01989",
+            "aa044955-0ba5-47aa-ac3e-6107acda50f0",
+            "d64701cf-b362-4501-aefb-07d2f16de7b9",
+            "0d125a44-82d8-4e6b-b3b2-8d0ba69203c4",
+            "0720e531-42e8-4e91-a8fb-ee6108fe84e3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 35123,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {},
+      "version": "5.1.0"
+    }
+  }
+}

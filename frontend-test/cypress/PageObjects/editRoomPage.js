@@ -1,5 +1,7 @@
 /// <reference types="cypress"/>
 
+import faker from 'faker'
+
 const pageURL='http://localhost:3000/room/3'
 const h2='h2'
 const textH2='Room: 3'
@@ -14,7 +16,7 @@ function assertRightPage(cy){
 }
 
 function editPrice(cy){
-    cy.get(PriceField).clear().type('3000').should('have.value','3000')
+    cy.get(PriceField).clear().type('3000').should('have.value', '3000')
 }
 
 function saveRoom(cy){
