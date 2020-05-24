@@ -6,7 +6,7 @@ const h2='h2'
 
 const backBtn=':nth-child(3) .btn'
 const textH2='Clients'
-const createRoomBtn='.blue' 
+const createClientBtn='.blue' 
 
 const logoutBtn='.user .btn'
 
@@ -20,10 +20,15 @@ function backToOverview(cy){
     cy.get(backBtn).click()
 }
 
+function createClient(cy){
+    cy.get(createClientBtn).click()
+}
+
 
 module.exports={
     assertRightPage,
     backToOverview,
+    createClient,
     pageURL
 
 }

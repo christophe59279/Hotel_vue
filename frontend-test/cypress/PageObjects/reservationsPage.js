@@ -20,10 +20,15 @@ function backToOverview(cy){
     cy.get(backBtn).click()
 }
 
+function validLogout(cy){
+    cy.get(logoutBtn).click()
+}
+
 
 module.exports={
     assertRightPage,
     backToOverview,
+    validLogout,
     pageURL
 
 }

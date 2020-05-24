@@ -23,6 +23,7 @@ function validLogin(cy){
     cy.get(userNameField).type(userName1).should('have.value',userName1)
     cy.get(PassWordField).type(passWord1).should('have.value',passWord1)
     cy.get(loginBtn).click()
+    cy.wait(500)
 }
 
 module.exports={
